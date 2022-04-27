@@ -1,5 +1,7 @@
 version: 0.2
-
+env:
+  variables:
+    REPOSITORY_URI=846317326898.dkr.ecr.ap-southeast-1.amazonaws.com/react-cicd
 phases:
   pre_build:
     commands:
@@ -22,6 +24,6 @@ phases:
         - docker push $REPOSITORY_URI:latest
         - docker push $REPOSITORY_URI:$IMAGE_TAG
         - echo Writing image definitions file...
-        - printf '[{"name":"reactjs-docker-container","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
+        - printf '[{"name":"react-cicd","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
 artifacts:
     files: imagedefinitions.json
