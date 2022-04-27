@@ -1,7 +1,5 @@
 version: 0.2
-env:
-  variables:
-    REPOSITORY_URI=846317326898.dkr.ecr.ap-southeast-1.amazonaws.com/react-cicd
+
 phases:
   pre_build:
     commands:
